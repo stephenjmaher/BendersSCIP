@@ -29,13 +29,14 @@ do
    fi
 done
 
-SCIPPATH=`realpath $SCIPDIR`
-
 if test -z $BENDERSFILES
 then
    echo "All inputs have not been defined. Please specify the SCIP directory and the Benders' decomposition framework source files"
+   echo "Correct usage: sync_with_scip.sh <dir/to/scip> <benders source files>"
    exit 1
 fi
+
+SCIPPATH=`realpath $SCIPDIR`
 
 # Checking whether the user is sure they want to update the SCIP directory
 if [ "$UPDATE" = 1 ]
